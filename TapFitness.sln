@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapFitness.iOS", "TapFitnes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapFitness.Droid", "TapFitness.Droid\TapFitness.Droid.csproj", "{D00556EF-CF7C-427C-B573-00D79FBDB094}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapFitness.UnitTests", "TapFitness.UnitTest\TapFitness.UnitTests.csproj", "{F921BE41-2C56-4AF9-915F-692D0A8D223C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,17 @@ Global
 		{D00556EF-CF7C-427C-B573-00D79FBDB094}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{D00556EF-CF7C-427C-B573-00D79FBDB094}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{D00556EF-CF7C-427C-B573-00D79FBDB094}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Release|iPhone.Build.0 = Release|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F921BE41-2C56-4AF9-915F-692D0A8D223C}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

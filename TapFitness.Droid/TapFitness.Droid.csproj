@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>TapFitness.Droid</RootNamespace>
     <AssemblyName>TapFitness.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
