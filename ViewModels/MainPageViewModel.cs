@@ -18,7 +18,7 @@ namespace TapFitness.ViewModels
 
         public MainPageViewModel()
         {
-
+            
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -29,7 +29,7 @@ namespace TapFitness.ViewModels
         public void OnNavigatedTo(NavigationParameters parameters)
         {
             if (parameters.ContainsKey("title"))
-                Title = (string)parameters["title"] + " and Prism";
+                Title = (string)parameters["title"];
         }
 
         public void OnNavigatingTo(NavigationParameters parameters)
