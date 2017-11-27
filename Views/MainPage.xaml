@@ -10,10 +10,9 @@
 	<StackLayout HorizontalOptions="Center" 
                  VerticalOptions="Center">
 
-
-        
 		<Label Text="{Binding Title}" />
-
+        <Label x:Name="Author"
+                Text="{Binding Authors}" />
 
         
 	</StackLayout>
