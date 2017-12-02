@@ -23,6 +23,9 @@ namespace TapFitness
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<DataEntryPageOne>();
+            Container.RegisterTypeForNavigation<DataEntryPageTwo>();
+            Container.RegisterTypeForNavigation<DataEntryPageThree>();
         }
     }
 }

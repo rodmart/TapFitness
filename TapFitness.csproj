@@ -37,12 +37,33 @@
     </Compile>
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Models\ExerciseItemModels.cs" />
+    <Compile Include="ViewModels\DataEntryPageOneViewModel.cs" />
+    <Compile Include="Views\DataEntryPageOne.xaml.cs">
+      <DependentUpon>DataEntryPageOne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataEntryPageTwo.xaml.cs">
+      <DependentUpon>DataEntryPageTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataEntryPageThree.xaml.cs">
+      <DependentUpon>DataEntryPageThree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\DataEntryPageTwoViewModel.cs" />
+    <Compile Include="ViewModels\DataEntryPageThreeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DataEntryPageOne.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DataEntryPageTwo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DataEntryPageThree.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
