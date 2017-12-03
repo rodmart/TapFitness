@@ -4,16 +4,47 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.MainPage"
-    Title="BGR.TapFitness"
     Padding="0,20,0,0"
-    BackgroundColor = "Gray">
-	<StackLayout HorizontalOptions="Center" 
-                 VerticalOptions="Center">
-
-		<Label Text="{Binding Title}" />
-        <Label x:Name="Author"
-                Text="{Binding Authors}" />
-
+   Title="BGR.TapFitness" 
+    BackgroundColor= "White"
+    >
+    <ScrollView
+            Orientation="Horizontal"
+        Margin="10"
+        MinimumHeightRequest="10"
+        MinimumWidthRequest="200">
+          
+	        <StackLayout 
+             Padding="10,20,400,600"
+              HorizontalOptions="Center" 
+                 VerticalOptions="Start">
+       
+		        <Label
+                 x:Name="Welcome"
+                   Text="{Binding welcome}"
+                   Font="25"
+                    />
+              <Label
+                 x:Name="Intro"
+                 Text="{Binding Intro}"
+                   />
+                <Label
+                 x:Name="Introtwo"
+                 Text="{Binding Intro2}"
+                   />
+                <Label
+                 x:Name="Introthree"
+                 Text="{Binding Intro3}"
+                   />
+               <Label
+                  x:Name="swipe"
+                 Text="{Binding swipe}"
+                 />
+           
         
-	</StackLayout>
+	        </StackLayout>
+       
+    </ScrollView>
 </ContentPage>
+
+  
