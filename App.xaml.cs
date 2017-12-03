@@ -15,8 +15,6 @@ namespace TapFitness
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-            //NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
             NavigationService.NavigateAsync($"MainPage");
         }
 
