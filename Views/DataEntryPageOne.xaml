@@ -15,14 +15,33 @@
         Text="What is your Fitness Goal?"
         Style="{StaticResource DataEntryStyleOne}"/>
 
-        <Picker 
-        x:Name="PickerOne"
-        />
+            <Picker 
+            x:Name="PickerOne" />
 
-        <Button
+           
+
+            <Frame
+                HasShadow="true"
+                BackgroundColor="Aqua" >
+                <StackLayout
+                Spacing="10"
+                Orientation="Vertical" >
+            <Entry
+                Placeholder="What is your current weight? (in lbs)"
+                Text="{Binding CurrWeightEnteredByUser}"
+                WidthRequest="200" />
+
+            <Entry
+                Placeholder="What is your goal weight? (in lbs)"
+                Text="{Binding GoalWeightEnteredByUser}"
+                WidthRequest="200" />
+                </StackLayout>
+            </Frame>
+
+        
+            <Button
             Text="Please Continue"
             Command="{Binding CompletedQuestionOneCommand}" />
-        
     </StackLayout>
 
     

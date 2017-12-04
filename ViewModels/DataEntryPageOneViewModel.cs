@@ -13,7 +13,22 @@ namespace TapFitness.ViewModels
 		INavigationService _navigationService;
 		public DelegateCommand CompletedQuestionOneCommand { get; set; }
         public DelegateCommand GoBackCommand { get; set; }
-        //goback2 gages note
+		//goback2 gages note
+
+
+        private string _currweightEnteredByUser;
+        public string CurrWeightEnteredByUser
+		{
+            get { return _currweightEnteredByUser; }
+            set { SetProperty(ref _currweightEnteredByUser, value); }
+		}
+
+        private string _goalweightEnteredByUser;
+		public string GoalWeightEnteredByUser
+		{
+            get { return _goalweightEnteredByUser; }
+            set { SetProperty(ref _goalweightEnteredByUser, value); }
+		}
 
         public DataEntryPageOneViewModel(INavigationService navigationService)
         {
