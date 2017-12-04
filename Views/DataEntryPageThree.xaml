@@ -4,7 +4,20 @@
     xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
-    x:Class="TapFitness.Views.DataEntryPageThree">
+    x:Class="TapFitness.Views.DataEntryPageThree"
+    BackgroundColor = "Blue">
+    <StackLayout>
+        <Label 
+        x:Name="DataLabelThree"
+        Text="General Questions"
+        Style="{StaticResource DataEntryStyleOne}"/>
+
+        <Picker 
+        x:Name="PickerThree" />
 
     
+        <Button
+            Text="have multiple questions here "
+            Command="{Binding CompletedQuestionThreeCommand}" />
+   </StackLayout> 
 </ContentPage>

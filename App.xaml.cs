@@ -15,7 +15,8 @@ namespace TapFitness
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync($"MainPage");
+           // NavigationService.NavigateAsync($"MainPage");
+            NavigationService.NavigateAsync($"DataEntryPageOne");
         }
 
         protected override void RegisterTypes()
@@ -24,6 +25,7 @@ namespace TapFitness
             Container.RegisterTypeForNavigation<DataEntryPageOne>();
             Container.RegisterTypeForNavigation<DataEntryPageTwo>();
             Container.RegisterTypeForNavigation<DataEntryPageThree>();
+            Container.RegisterTypeForNavigation<DataSummaryPage>();
         }
     }
 }

@@ -49,6 +49,10 @@
     </Compile>
     <Compile Include="ViewModels\DataEntryPageTwoViewModel.cs" />
     <Compile Include="ViewModels\DataEntryPageThreeViewModel.cs" />
+    <Compile Include="ViewModels\DataSummaryPageViewModel.cs" />
+    <Compile Include="Views\DataSummaryPage.xaml.cs">
+      <DependentUpon>DataSummaryPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -64,6 +68,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DataEntryPageThree.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DataSummaryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -9,11 +9,30 @@ namespace TapFitness.ViewModels
 {
     public class DataEntryPageTwoViewModel : BindableBase, INavigationAware
     {
-        public DataEntryPageTwoViewModel()
-        {
+		INavigationService _navigationService;
+		public DelegateCommand CompletedQuestionTwoCommand { get; set; }
+		public DelegateCommand GoBackCommandTwo { get; set; }
 
+
+        public DataEntryPageTwoViewModel(INavigationService navigationService)
+        {
+			_navigationService = navigationService;
+
+			CompletedQuestionTwoCommand = new DelegateCommand(NavToDataEntryPageThree);
+			GoBackCommandTwo = new DelegateCommand(GoBackTwo);
         }
 
+		private async void NavToDataEntryPageThree()
+		{
+			var navParams = new NavigationParameters();
+			navParams.Add("NavFromDataPageTwo", "DataEntryPageTwoViewModel");
+			await _navigationService.NavigateAsync("DataEntryPageThree", navParams);
+		}
+
+		private void GoBackTwo()
+		{
+			_navigationService.GoBackAsync();
+		}
 
 		public void OnNavigatedFrom(NavigationParameters parameters)
 		{

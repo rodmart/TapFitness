@@ -2,12 +2,11 @@
 
 namespace TapFitness.Views
 {
-    public partial class DataEntryPageOne : ContentPage
+    public partial class DataSummaryPage : ContentPage
     {
-        public DataEntryPageOne()
+        public DataSummaryPage()
         {
             InitializeComponent();
-
         }
     }
 }

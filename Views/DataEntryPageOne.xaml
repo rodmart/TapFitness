@@ -6,16 +6,22 @@
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.DataEntryPageOne"
     Padding="0,20,0,0"
-    BackgroundColor = "Gray">
+    BackgroundColor = "Blue">
     
-    <StackLayout
-        HorizontalOptions="Center" 
-        VerticalOptions="Center">
+    <StackLayout>
+    
+        <Label 
+        x:Name="DataLabelOne"
+        Text="What is your Fitness Goal?"
+        Style="{StaticResource DataEntryStyleOne}"/>
 
-        <Label Text="{Binding Title}" />
-        <Label x:Name="Author"
-                Text="{Binding Authors}" />
+        <Picker 
+        x:Name="PickerOne"
+        />
 
+        <Button
+            Text="Please Continue"
+            Command="{Binding CompletedQuestionOneCommand}" />
         
     </StackLayout>
 
