@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace TapFitness.ViewModels
 {
@@ -33,7 +34,6 @@ namespace TapFitness.ViewModels
         public DataEntryPageOneViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-
             CompletedQuestionOneCommand = new DelegateCommand(NavToDataEntryPageTwo);
             GoBackCommand = new DelegateCommand(GoBack);
         }
@@ -61,6 +61,7 @@ namespace TapFitness.ViewModels
 		public void OnNavigatingTo(NavigationParameters parameters)
 		{
 		}
+
 
     }
 }

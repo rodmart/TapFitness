@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
-
+using Xamarin.Forms;
 namespace TapFitness.ViewModels
 {
     public class DataEntryPageTwoViewModel : BindableBase, INavigationAware
@@ -16,6 +16,7 @@ namespace TapFitness.ViewModels
 
         public DataEntryPageTwoViewModel(INavigationService navigationService)
         {
+            populatePicker();
 			_navigationService = navigationService;
 
 			CompletedQuestionTwoCommand = new DelegateCommand(NavToDataEntryPageThree);
@@ -45,5 +46,13 @@ namespace TapFitness.ViewModels
 		public void OnNavigatingTo(NavigationParameters parameters)
 		{
 		}
+
+        private void populatePicker(){
+            Picker newpick = new Picker();
+            for (int i = 0; i < 10;i++)
+            {
+                newpick.Items.Add(i.ToString());
+            }
+        }
     }
 }
