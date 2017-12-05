@@ -54,6 +54,7 @@
       <DependentUpon>DataSummaryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ApiKeys.cs" />
+    <Compile Include="Globals.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">

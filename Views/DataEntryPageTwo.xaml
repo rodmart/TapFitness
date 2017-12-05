@@ -13,7 +13,11 @@
         Style="{StaticResource DataEntryStyleOne}"/>
 
 
-
+        <Label
+        x:Name="temp"
+        VerticalOptions="End"
+        Text="{Binding temp}"
+        />
     
         <Button
             Text="Please Continue Some More "

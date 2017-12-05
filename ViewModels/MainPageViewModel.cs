@@ -18,6 +18,7 @@ namespace TapFitness.ViewModels
         private string _Intro;
         private string _Swipe;
         private string _paragraph;
+        private string _temp;
 
         public string Title
         {
@@ -46,6 +47,11 @@ namespace TapFitness.ViewModels
             get { return _paragraph; }
             set { SetProperty(ref _paragraph, value); }
         }
+		public string temp
+		{
+			get { return _temp; }
+			set { SetProperty(ref _temp, value); }
+		}
 
 
         INavigationService _navigationService;
@@ -67,7 +73,7 @@ namespace TapFitness.ViewModels
             paragraph1 = "In the next few pages we will have you enter " +
                 "your information in order for us to compile all your " +
                 "infomation to give you the best possible solution.";
-
+            temp = Globals.fitnessGoals;
             ContinueCommand = new DelegateCommand(NavToDataEntryPageOne);
            
         }

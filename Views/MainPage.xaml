@@ -44,6 +44,11 @@
                     VerticalOptions="End"
                  Text="{Binding swipe}"
                  />
+                <Label
+                  x:Name="temp"
+                    VerticalOptions="End"
+                 Text="{Binding temp}"
+                 />
            
         
 	      </StackLayout>

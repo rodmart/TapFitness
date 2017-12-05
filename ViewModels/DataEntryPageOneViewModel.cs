@@ -1,11 +1,13 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Prism.Navigation;
+using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
+using System.Net.Http;
 using Xamarin.Forms;
-
 namespace TapFitness.ViewModels
 {
     public class DataEntryPageOneViewModel : BindableBase, INavigationAware
@@ -14,6 +16,7 @@ namespace TapFitness.ViewModels
 		INavigationService _navigationService;
 		public DelegateCommand CompletedQuestionOneCommand { get; set; }
         public DelegateCommand GoBackCommand { get; set; }
+        public DelegateCommand<Picker> ItemSelectedCommand { get; set; }
 		//goback2 gages note
 
 
@@ -36,8 +39,12 @@ namespace TapFitness.ViewModels
             _navigationService = navigationService;
             CompletedQuestionOneCommand = new DelegateCommand(NavToDataEntryPageTwo);
             GoBackCommand = new DelegateCommand(GoBack);
+            ItemSelectedCommand = new DelegateCommand<Picker>(ItemSelected);
         }
-
+		private void ItemSelected(Picker item)
+		{
+            Globals.fitnessGoals = " random";
+		}
 		private async void NavToDataEntryPageTwo()
 		{
 			var navParams = new NavigationParameters();

@@ -9,6 +9,14 @@ namespace TapFitness.ViewModels
 {
     public class DataEntryPageTwoViewModel : BindableBase, INavigationAware
     {
+        private string _temp;
+
+		public string temp
+		{
+			get { return _temp; }
+			set { SetProperty(ref _temp, value); }
+		}
+
 		INavigationService _navigationService;
 		public DelegateCommand CompletedQuestionTwoCommand { get; set; }
 		public DelegateCommand GoBackCommandTwo { get; set; }
@@ -16,9 +24,8 @@ namespace TapFitness.ViewModels
 
         public DataEntryPageTwoViewModel(INavigationService navigationService)
         {
-            populatePicker();
-			_navigationService = navigationService;
-
+            temp = Globals.fitnessGoals;
+            _navigationService = navigationService;
 			CompletedQuestionTwoCommand = new DelegateCommand(NavToDataEntryPageThree);
 			GoBackCommandTwo = new DelegateCommand(GoBackTwo);
         }

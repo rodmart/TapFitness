@@ -10,7 +10,7 @@
     
     <StackLayout Padding="0,30,0,0">
     
-        <Picker x:Name="GoalPicker" HorizontalOptions="Center" VerticalOptions="Center" Title="Enter your Goal">
+        <Picker x:Name="GoalPicker" SelectedIndexChanged="{Binding ItemSelectedCommand}" HorizontalOptions="Center" VerticalOptions="Center" Title="Enter your Goal">
             <Picker.Items>
                 <x:String>Lose weight healthy</x:String> 
                 <x:String>Gain weight healthy</x:String>
