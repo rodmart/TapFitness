@@ -79,24 +79,32 @@ namespace TapFitness.ViewModels
             await _navigationService.NavigateAsync("DataEntryPageOne", navParams);
         }
 
+        public string ExerciseForUser; //needs to be implemented
 
-        //internal async void GetUserinfo()
-        //{
-        //    HttpClient client = new HttpClient();
-        //    var uri = new Uri(
-        //        string.Format(
-        //            $"https://wger.de/api/v2/workout/{LocationEnteredByUser}&units=imperial&APPID=" +
-        //            $"{ApiKeys.WeatherKey}"));
-        //    var response = await client.GetAsync(uri);
-        //     weatherData = null;
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        var content = await response.Content.ReadAsStringAsync();
-        //        weatherData = WeatherItem.FromJson(content);
-        //    }
+
+        internal async void GetUserinfo()
+        {
+            HttpClient client = new HttpClient();
+            var uri = new Uri(
+                string.Format(
+                    $"https://wger.de/api/v2/workout/{ExerciseForUser}&units=imperial&APPID=" +
+                    $"{ApiKeys.ExerciseKey}"));
+            var response = await client.GetAsync(uri);
+            //ExerciseItemData = null;
+           if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+               // weatherData = ExerciseItem.FromJson(content);
+            }
         //    WeatherCollection.Add(weatherData);
-        //}
+        }
       
+        private ObservableCollection<ExerciseItem> _exerciseCollection = new ObservableCollection<ExerciseItem>();
+        public ObservableCollection<ExerciseItem> ExerciseCollection
+        {
+            get { return _exerciseCollection; }
+            set { SetProperty(ref _exerciseCollection, value); }
+        }
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
             
