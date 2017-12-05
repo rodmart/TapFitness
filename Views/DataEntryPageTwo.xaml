@@ -6,7 +6,7 @@
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.DataEntryPageTwo"
     BackgroundColor = "Blue">
-    <StackLayout>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="30">
         <Label 
         x:Name="DataLabelTwo"
         Text="How active are you?"

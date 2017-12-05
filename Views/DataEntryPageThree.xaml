@@ -6,7 +6,7 @@
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.DataEntryPageThree"
     BackgroundColor = "Blue">
-    <StackLayout>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="30">
         <Label 
         x:Name="DataLabelThree"
         Text="General Questions"
