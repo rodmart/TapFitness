@@ -12,8 +12,7 @@
         Text="How active are you?"
         Style="{StaticResource DataEntryStyleOne}"/>
 
-        <Picker 
-        x:Name="PickerTwo" />
+
 
     
         <Button

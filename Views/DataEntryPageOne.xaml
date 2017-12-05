@@ -8,15 +8,15 @@
     Padding="0,20,0,0"
     BackgroundColor = "Blue">
     
-    <StackLayout>
+    <StackLayout Padding="0,30,0,0">
     
-        <Label 
-        x:Name="DataLabelOne"
-        Text="What is your Fitness Goal?"
-        Style="{StaticResource DataEntryStyleOne}"/>
-
-            <Picker 
-            x:Name="PickerOne" />
+        <Picker x:Name="GoalPicker" HorizontalOptions="Center" VerticalOptions="Center" Title="Enter your Goal">
+            <Picker.Items>
+                <x:String>Lose weight healthy</x:String> 
+                <x:String>Gain weight healthy</x:String>
+                <x:String>Stay the same weight healthy</x:String>
+            </Picker.Items>
+        </Picker> 
 
            
 
