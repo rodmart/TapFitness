@@ -24,14 +24,22 @@ namespace TapFitness.ViewModels
         public string CurrWeightEnteredByUser
 		{
             get { return _currweightEnteredByUser; }
-            set { SetProperty(ref _currweightEnteredByUser, value); }
+            set
+            {
+                SetProperty(ref _currweightEnteredByUser, value);
+                Globals.currentWeight = value;
+            }
 		}
 
         private string _goalweightEnteredByUser;
 		public string GoalWeightEnteredByUser
 		{
             get { return _goalweightEnteredByUser; }
-            set { SetProperty(ref _goalweightEnteredByUser, value); }
+            set
+            {
+                SetProperty(ref _goalweightEnteredByUser, value);
+                Globals.goalWeight = value;
+            }
 		}
 
         public DataEntryPageOneViewModel(INavigationService navigationService)
@@ -39,9 +47,9 @@ namespace TapFitness.ViewModels
             _navigationService = navigationService;
             CompletedQuestionOneCommand = new DelegateCommand(NavToDataEntryPageTwo);
             GoBackCommand = new DelegateCommand(GoBack);
-            ItemSelectedCommand = new DelegateCommand<Picker>(ItemSelected);
+            ItemSelectedCommand = new DelegateCommand<Picker> (ItemSelected);
         }
-		private void ItemSelected(Picker item)
+        private void ItemSelected(Object item)
 		{
             Globals.fitnessGoals = " random";
 		}

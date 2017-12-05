@@ -8,10 +8,30 @@
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="30">
 
-        <Label 
-            x:Name="SummaryPageLabel"
-            Text="insert meme here"
-        FontSize="30"/>
+        <Label
+         x:Name="fitnessGoal"
+           Text="{Binding fitnessGoal}"
+           Font="16"
+        />
+
+        <Label
+         x:Name="currentWeight"
+           Text="{Binding currentWeight}"
+           Font="16"
+        />
+        <Label
+         x:Name="coalWeight"
+           Text="{Binding goalWeight}"
+           Font="16"
+        />
+        <Label
+         x:Name="activityLevel"
+           Text="{Binding activityLevel}"
+           Font="16"
+        />
+        <Button
+            Text="Incorrect Info? Click to go back."
+            Command="{Binding GoBackCommand}" />
 
     </StackLayout>
 </ContentPage>

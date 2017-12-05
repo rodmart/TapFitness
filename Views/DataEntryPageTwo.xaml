@@ -5,6 +5,7 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.DataEntryPageTwo"
+    Padding="0,20,0,0"
     BackgroundColor = "Blue">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="30">
         <Label 
@@ -12,15 +13,20 @@
         Text="How active are you?"
         Style="{StaticResource DataEntryStyleOne}"/>
 
+        <Picker x:Name="ActivityPicker" SelectedIndexChanged="Handle_SelectedIndexChanged" HorizontalOptions="Center" VerticalOptions="Center" Title="How active are you?">
+            <Picker.Items>
+                <x:String>Not Active</x:String> 
+                <x:String>Somewhat Active</x:String>
+                <x:String>Moderately Active</x:String>
+                <x:String>Very Active</x:String>
+            </Picker.Items>
+        </Picker> 
 
-        <Label
-        x:Name="temp"
-        VerticalOptions="End"
-        Text="{Binding temp}"
-        />
-    
         <Button
             Text="Please Continue Some More "
             Command="{Binding CompletedQuestionTwoCommand}" />
+        <Button
+            Text="Go Back"
+            Command="{Binding GoBackCommandTwo}" />
    </StackLayout> 
 </ContentPage>

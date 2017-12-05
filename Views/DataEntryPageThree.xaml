@@ -19,5 +19,8 @@
         <Button
             Text="have multiple questions here "
             Command="{Binding CompletedQuestionThreeCommand}" />
+        <Button
+            Text="Go Back"
+            Command="{Binding GoBackCommandThree}" />
    </StackLayout> 
 </ContentPage>

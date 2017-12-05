@@ -9,8 +9,13 @@
     BackgroundColor = "Blue">
     
     <StackLayout Padding="0,30,0,0">
-    
-        <Picker x:Name="GoalPicker" SelectedIndexChanged="{Binding ItemSelectedCommand}" HorizontalOptions="Center" VerticalOptions="Center" Title="Enter your Goal">
+
+        <Label 
+        x:Name="DataLabelTwo"
+        Text="Choose your goal"
+        Style="{StaticResource DataEntryStyleOne}"/>
+        
+        <Picker x:Name="GoalPicker" SelectedIndexChanged="Handle_SelectedIndexChanged" HorizontalOptions="Center" VerticalOptions="Center" Title="Enter your Goal">
             <Picker.Items>
                 <x:String>Lose weight healthy</x:String> 
                 <x:String>Gain weight healthy</x:String>

@@ -24,7 +24,7 @@ namespace TapFitness.ViewModels
 
         public DataEntryPageTwoViewModel(INavigationService navigationService)
         {
-            temp = Globals.fitnessGoals;
+            temp = Globals.currentWeight;
             _navigationService = navigationService;
 			CompletedQuestionTwoCommand = new DelegateCommand(NavToDataEntryPageThree);
 			GoBackCommandTwo = new DelegateCommand(GoBackTwo);
