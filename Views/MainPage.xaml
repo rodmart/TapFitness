@@ -4,47 +4,74 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.MainPage"
-    Padding="0,20,0,0"
+    Padding="10,30,10,0"
    Title="BGR.TapFitness" 
-    BackgroundColor= "White"
+    BackgroundColor= "Silver"
     >
-    <ScrollView
-            Orientation="Horizontal"
-        Margin="10"
-        MinimumHeightRequest="10"
-        MinimumWidthRequest="200">
-          
+  <ScrollView
+     Orientation="Horizontal" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="600"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="375"/>
+            <ColumnDefinition Width="355"/>   
+        </Grid.ColumnDefinitions>
+        
 	        <StackLayout 
-             Padding="10,20,400,600"
-              HorizontalOptions="Center" 
-                 VerticalOptions="Start">
+                 Grid.Row="0"
+                 Grid.Column="0"                 
+                 HorizontalOptions="Center" 
+                 VerticalOptions="Fill"
+                 BackgroundColor="Gray">
        
 		        <Label
+
                  x:Name="Welcome"
                    Text="{Binding welcome}"
                    Font="25"
                     />
               <Label
+                 Grid.Row="0"
+                 Grid.Column="1"
                  x:Name="Intro"
+                    Font="20"
                  Text="{Binding Intro}"
-                   />
-                <Label
-                 x:Name="Introtwo"
-                 Text="{Binding Intro2}"
-                   />
-                <Label
-                 x:Name="Introthree"
-                 Text="{Binding Intro3}"
                    />
                <Label
                   x:Name="swipe"
+                    VerticalOptions="End"
                  Text="{Binding swipe}"
                  />
            
         
-	        </StackLayout>
-       
+	      </StackLayout>
+      <StackLayout
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            VerticalOptions="FillAndExpand"
+            Padding="10"
+                BackgroundColor="Gray">
+
+            <Label
+                    Font="25"
+                Text="{Binding paragraph1}"
+                />
+
+            <Button 
+                VerticalOptions="CenterAndExpand"
+                Text="       Continue       "
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="Silver"
+                Command="{Binding ContinueCommand}" />
+               
+        </StackLayout>
+
+    </Grid>
     </ScrollView>
+
 </ContentPage>
 
   

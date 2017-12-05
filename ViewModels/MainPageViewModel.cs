@@ -14,9 +14,8 @@ namespace TapFitness.ViewModels
         private string _title;
         private string _Welcome;
         private string _Intro;
-        private string _Intro2;
-        private string _Intro3;
         private string _Swipe;
+        private string _paragraph;
 
         public string Title
         {
@@ -33,34 +32,50 @@ namespace TapFitness.ViewModels
             get { return _Intro; }
             set { SetProperty(ref _Intro, value); }
         }
-        public string Intro2
-        {
-            get { return _Intro2; }
-            set { SetProperty(ref _Intro2, value); }
-        }
-        public string Intro3
-        {
-            get { return _Intro3; }
-            set { SetProperty(ref _Intro3, value); }
-        }
+
         public string swipe
         {
             get { return _Swipe; }
             set { SetProperty(ref _Swipe, value); }
         }
-        public MainPageViewModel(INavigationService navigationService)
+
+        public string paragraph1
         {
-            Title= "BGR.TapFitness";
-            welcome="WELCOME To TapFitness";
-            Intro = "Glad to have you on board. ";
-
-
-            Intro2 = "You have taken the first step to improve";
-            Intro3="your health.";
-
-            swipe="swipe left to begin.";
+            get { return _paragraph; }
+            set { SetProperty(ref _paragraph, value); }
         }
 
+
+        INavigationService _navigationService;
+        public DelegateCommand ContinueCommand { get; set; }
+
+
+        public MainPageViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+
+
+            Title= "BGR.TapFitness";
+            welcome="WELCOME To TapFitness";
+            Intro = "Glad to have you on board." +
+                "You have taken the first step to improve" +
+                "your health.";
+
+            swipe="swipe left to begin.";
+            paragraph1 = "In the next few pages we will have you enter " +
+                "your information in order for us to compile all your " +
+                "infomation to give you the best possible solution.";
+
+            ContinueCommand = new DelegateCommand(NavToDataEntryPageOne);
+           
+        }
+
+        private async void NavToDataEntryPageOne()
+        {
+            var navParams = new NavigationParameters();
+            navParams.Add("NavFromDataMainPage", "MainPageViewModel");
+            await _navigationService.NavigateAsync("DataEntryPageOne", navParams);
+        }
       
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
