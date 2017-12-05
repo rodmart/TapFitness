@@ -31,7 +31,7 @@
         />
         <Button
             Text="Incorrect Info? Click to go back."
-            Command="{Binding GoBackCommand}" />
+            Command="{Binding GoBackRootDataCommand}" />
 
     </StackLayout>
 </ContentPage>

@@ -17,6 +17,7 @@ namespace TapFitness.ViewModels
 
 
         public DelegateCommand GoBackCommandTwo { get; set; }
+        public DelegateCommand GoBackRootDataCommand { get; set;}
 
         public string fitnessGoal
 		{
@@ -49,11 +50,16 @@ namespace TapFitness.ViewModels
             currentWeight = "Current Weight: " + Globals.currentWeight;
             goalWeight = "Goal Weight: " + Globals.goalWeight;
             activityLevel = "Activity Level: " + Globals.activityLevel;
-
+            GoBackRootDataCommand = new DelegateCommand(GoBackRootData);
 
         }
 
-
+		private async void GoBackRootData()
+		{
+			var navParams = new NavigationParameters();
+			navParams.Add("NavFromSummaryPage", "DataSummaryPageViewModel");
+			await _navigationService.NavigateAsync("DataEntryPageOne", navParams);
+		}
 
 		public void OnNavigatedFrom(NavigationParameters parameters)
 		{
