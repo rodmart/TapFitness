@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
+using Plugin.TextToSpeech;
 
 namespace TapFitness.ViewModels
 {
@@ -18,6 +19,11 @@ namespace TapFitness.ViewModels
 
         public DelegateCommand GoBackCommandTwo { get; set; }
         public DelegateCommand GoBackRootDataCommand { get; set;}
+        public DelegateCommand TextToSpeechCommand { get; set; }
+
+
+
+
 
         public string fitnessGoal
 		{
@@ -40,6 +46,13 @@ namespace TapFitness.ViewModels
 			set { SetProperty(ref _activityLevel, value); }
 		}
 
+		private string _TextToSpeech;
+		public string TextToSpeech
+		{
+            get { return _TextToSpeech; }
+            set { SetProperty(ref _TextToSpeech, value); }
+		}
+
 		INavigationService _navigationService;
 		public DelegateCommand CompletedQuestionThreeCommand { get; set; }
 
@@ -51,7 +64,15 @@ namespace TapFitness.ViewModels
             goalWeight = "Goal Weight: " + Globals.goalWeight;
             activityLevel = "Activity Level: " + Globals.activityLevel;
             GoBackRootDataCommand = new DelegateCommand(GoBackRootData);
+            TextToSpeechCommand = new DelegateCommand(TextToSpeechFunc);
 
+        }
+
+        private void TextToSpeechFunc()
+        {
+            // var SpeechText = TextToSpeechEntry.Text;
+            //CrossTextToSpeech.Current.Speak(SpeechText);
+            CrossTextToSpeech.Current.Speak(TextToSpeech);
         }
 
 		private async void GoBackRootData()

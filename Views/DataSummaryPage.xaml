@@ -17,21 +17,29 @@
         <Label
          x:Name="currentWeight"
            Text="{Binding currentWeight}"
-           Font="16"
-        />
+           Font="16" />
+        
         <Label
          x:Name="coalWeight"
            Text="{Binding goalWeight}"
-           Font="16"
-        />
+           Font="16" />
+        
         <Label
          x:Name="activityLevel"
            Text="{Binding activityLevel}"
-           Font="16"
-        />
+           Font="16" />
+        
         <Button
             Text="Incorrect Info? Click to go back."
             Command="{Binding GoBackRootDataCommand}" />
+
+
+       <Entry x:Name="TextToSpeechEntry"
+            Placeholder="Placeholder" 
+            Text="{Binding TextToSpeech}" />
+        <Button
+            Text="CLICK ME TO TALK" 
+            Command="{Binding TextToSpeechCommand}" />
 
     </StackLayout>
 </ContentPage>
