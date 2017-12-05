@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
+using System.Net.Http;
+using static TapFitness.Models.ExerciseItemModels;
 
 namespace TapFitness.ViewModels
 {
@@ -76,6 +78,24 @@ namespace TapFitness.ViewModels
             navParams.Add("NavFromDataMainPage", "MainPageViewModel");
             await _navigationService.NavigateAsync("DataEntryPageOne", navParams);
         }
+
+
+        //internal async void GetUserinfo()
+        //{
+        //    HttpClient client = new HttpClient();
+        //    var uri = new Uri(
+        //        string.Format(
+        //            $"https://wger.de/api/v2/workout/{LocationEnteredByUser}&units=imperial&APPID=" +
+        //            $"{ApiKeys.WeatherKey}"));
+        //    var response = await client.GetAsync(uri);
+        //     weatherData = null;
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var content = await response.Content.ReadAsStringAsync();
+        //        weatherData = WeatherItem.FromJson(content);
+        //    }
+        //    WeatherCollection.Add(weatherData);
+        //}
       
         public void OnNavigatedFrom(NavigationParameters parameters)
         {

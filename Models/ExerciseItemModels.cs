@@ -1,60 +1,42 @@
-﻿//using System;
+﻿using System;
 
-//using Xamarin.Forms;
-//using System.Net;
-//using System.Collections.Generic;
+using Xamarin.Forms;
+using System.Net;
+using System.Collections.Generic;
 
-//using Newtonsoft.Json;
+using Newtonsoft.Json;
 
-//namespace TapFitness.Models
-//{
-    //public class ExerciseItemModels : ContentPage
-    //{
-    //    //public ExerciseItemModels()
-    //    //{
-    //    //    Content = new StackLayout
-    //    //    {
-    //    //        Children = {
-    //    //            new Label { Text = "Hello ContentPage" }
-    //    //        }
-    //    //    };
-    //    //}
-    //    // To parse this JSON data, add NuGet 'Newtonsoft.Json' then do:
-    //    //
-    //    //    using QuickType;
-    //    //
-    //    //    var data = GettingStarted.FromJson(jsonString);
+namespace TapFitness.Models
+{
+    public static class ExerciseItemModels
+    {
+        public class ExerciseItem
+        {
+            public string workout { get; set; }
+            public string workoutsession { get; set; }
+            public string schedulestep { get; set; }
+            public string schedule { get; set; }
+            public string language { get; set; }
+            public string daysofweek { get; set; }
+            public string license { get; set; }
 
+            public string exerciseinfo { get; set; }
+            public string exercise { get; set; }
+            public string equipment { get; set; }
+            public string exercisecategory { get; set; }
+            public string exerciseimage { get; set; }
+            public string exercisecomment { get; set; }
+            public string muscle { get; set; }
+            public string ingredient { get; set; }
+            public string weightunit { get; set; }
+            public string ingredientweightunit { get; set; }
+            public string nutritionplan { get; set; }
+            public string meal { get; set; }
+            public string mealitem { get; set; }
+            public string weightentry { get; set; }
+}
+    }
 
-    //    public partial class GettingStarted
-    //    {
-    //        [JsonProperty("greeting")]
-    //        public string Greeting { get; set; }
-
-    //        [JsonProperty("instructions")]
-    //        public string[] Instructions { get; set; }
-    //    }
-
-    //    public partial class GettingStarted
-    //    {
-    //        public static GettingStarted FromJson(string json) => JsonConvert.DeserializeObject<GettingStarted>(json, Converter.Settings);
-    //    }
-
-    //    public static class Serialize
-    //    {
-    //        public static string ToJson(this GettingStarted self) => JsonConvert.SerializeObject(self, Converter.Settings);
-    //    }
-
-    //    public class Converter
-    //    {
-    //        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-    //        {
-    //            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-    //            DateParseHandling = DateParseHandling.None,
-    //        };
-    //    }
-    //}
-
-    //}
+}
 
 
