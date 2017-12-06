@@ -15,7 +15,7 @@
             <RowDefinition Height="600"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="375"/>
+            <ColumnDefinition Width="365"/>
             <ColumnDefinition Width="355"/>   
         </Grid.ColumnDefinitions>
         
@@ -24,13 +24,21 @@
                  Grid.Column="0"                 
                  HorizontalOptions="Center" 
                  VerticalOptions="Fill"
+                Padding="10,0,10,0"
                  BackgroundColor="Gray">
        
 		        <Label
 
                  x:Name="Welcome"
+                    TextColor="Red"
                    Text="{Binding welcome}"
                    Font="25"
+                    />
+              
+                <Image
+                    Source="GokuImage.png"
+                    WidthRequest="250"
+                    HeightRequest="350"
                     />
               <Label
                  Grid.Row="0"
@@ -42,6 +50,7 @@
                <Label
                   x:Name="swipe"
                     VerticalOptions="End"
+                    TextColor="White"
                  Text="{Binding swipe}"
                  />
                 <Label
@@ -64,6 +73,14 @@
                     Font="25"
                 Text="{Binding paragraph1}"
                 />
+
+                <Label
+            Text="{Binding ExerciseItemForUser.Run, StringFormat='Exercise: {0}'}" 
+            TextColor="Black"
+        />
+                <Label
+                    Text="{Binding ExerciseItemForUser}"
+                    />
 
             <Button 
                 VerticalOptions="CenterAndExpand"

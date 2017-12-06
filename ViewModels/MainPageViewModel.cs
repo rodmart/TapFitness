@@ -87,13 +87,20 @@ namespace TapFitness.ViewModels
 
         public string ExerciseForUser; //needs to be implemented
 
+        private ExerciseItem _exerciseItem;
+        public ExerciseItem ExerciseItemForUser
+        {
+            get { return _exerciseItem; }
+            set { SetProperty(ref _exerciseItem, value); }
+        }
+
 
         internal async void GetUserinfo()
         {
             HttpClient client = new HttpClient();
             var uri = new Uri(
                 string.Format(
-                    $"https://wger.de/api/v2/workout/{ExerciseForUser}&units=imperial&APPID=" +
+                    $"https://wger.de/api/v2/workout/{ExerciseItemForUser}&units=imperial&APPID=" +
                     $"{ApiKeys.ExerciseKey}"));
             var response = await client.GetAsync(uri);
             //ExerciseItemData = null;
