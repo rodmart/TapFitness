@@ -8,7 +8,7 @@ namespace TapFitness.Models
 {
 	public static class ExerciseItemModel
 	{
-		public partial class Welcome
+		public partial class Exercise
 		{
 			[JsonProperty("count")]
 			public long Count { get; set; }
@@ -35,14 +35,14 @@ namespace TapFitness.Models
 			public string Weight { get; set; }
 		}
 
-		
+
 
 		public partial class Exercise
 		{
-            public static Exercise FromJson(string json) => JsonConvert.DeserializeObject<Exercise>(json, Converter.Settings);
+			public static Exercise FromJson(string json) => JsonConvert.DeserializeObject<Exercise>(json, Converter.Settings);
 		}
 
-        public static string ToJson(this Exercise self) => JsonConvert.SerializeObject(self, Converter.Settings);
+		public static string ToJson(this Exercise self) => JsonConvert.SerializeObject(self, Converter.Settings);
 
 		public class Converter
 		{

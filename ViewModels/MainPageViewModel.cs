@@ -137,8 +137,23 @@ namespace TapFitness.ViewModels
                
             }
             ExerciseCollection.Add(exerciseData);
+			AddToWeightResults();
         }
-      
+
+		private void AddToWeightResults()
+		{
+			foreach (var exercise in ExerciseCollection)
+			{
+				WeightResults.Add(exercise.Results[0]);
+			}
+		}
+
+		private ObservableCollection<Result> _weightResults = new ObservableCollection<Result>();
+		public ObservableCollection<Result> WeightResults
+		{
+			get { return _weightResults; }
+			set { SetProperty(ref _weightResults, value); }
+		}
        
         public void OnNavigatedFrom(NavigationParameters parameters)
         {

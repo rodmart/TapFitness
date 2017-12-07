@@ -36,7 +36,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainPageViewModel.cs" />
-    <Compile Include="Models\ExerciseItemModels.cs" />
+    <Compile Include="Models\ExerciseItemModel.cs" />
     <Compile Include="ViewModels\DataEntryPageOneViewModel.cs" />
     <Compile Include="Views\DataEntryPageOne.xaml.cs">
       <DependentUpon>DataEntryPageOne.xaml</DependentUpon>
