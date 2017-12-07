@@ -24,9 +24,13 @@
 
         <Button
             Text="Please Continue Some More "
+            Font="20"
+            TextColor="White"
             Command="{Binding CompletedQuestionTwoCommand}" />
         <Button
+            Font="20"
             Text="Go Back"
+            TextColor="White"
             Command="{Binding GoBackCommandTwo}" />
    </StackLayout> 
 </ContentPage>

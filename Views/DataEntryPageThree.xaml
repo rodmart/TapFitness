@@ -18,9 +18,13 @@
     
         <Button
             Text="have multiple questions here "
+            Font="20"
+            TextColor="White"
             Command="{Binding CompletedQuestionThreeCommand}" />
         <Button
             Text="Go Back"
+            Font="20"
+            TextColor="White"
             Command="{Binding GoBackCommandThree}" />
    </StackLayout> 
 </ContentPage>

@@ -87,8 +87,8 @@ namespace TapFitness.ViewModels
 
         public string ExerciseForUser; //needs to be implemented
 
-        private ExerciseItem _exerciseItem;
-        public ExerciseItem ExerciseItemForUser
+        private Exercise _exerciseItem;
+        public Exercise ExerciseItemForUser
         {
             get { return _exerciseItem; }
             set { SetProperty(ref _exerciseItem, value); }
@@ -103,17 +103,17 @@ namespace TapFitness.ViewModels
                     $"https://wger.de/api/v2/workout/{ExerciseItemForUser}&units=imperial&APPID=" +
                     $"{ApiKeys.ExerciseKey}"));
             var response = await client.GetAsync(uri);
-            //ExerciseItemData = null;
+            Exercise exerciseData = null;
            if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-               // weatherData = ExerciseItem.FromJson(content);
+                exerciseData = Exercise.FromJson(content);
             }
-        //    WeatherCollection.Add(weatherData);
+            ExerciseCollection.Add(exerciseData);
         }
       
-        private ObservableCollection<ExerciseItem> _exerciseCollection = new ObservableCollection<ExerciseItem>();
-        public ObservableCollection<ExerciseItem> ExerciseCollection
+        private ObservableCollection<Exercise> _exerciseCollection = new ObservableCollection<Exercise>();
+        public ObservableCollection<Exercise> ExerciseCollection
         {
             get { return _exerciseCollection; }
             set { SetProperty(ref _exerciseCollection, value); }

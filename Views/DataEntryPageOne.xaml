@@ -46,6 +46,8 @@
         
             <Button
             Text="Please Continue"
+            Font="20"
+            TextColor="White"
             Command="{Binding CompletedQuestionOneCommand}" />
     </StackLayout>
 
