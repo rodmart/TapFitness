@@ -82,6 +82,48 @@
                     Text="{Binding ExerciseItemForUser}"
                     />
 
+                      <Entry
+                Placeholder="Enter Plank Here"
+                Text="{Binding PlankTest}"
+                WidthRequest="200" />
+
+                <Button x:Name="ApiTestButton"
+                    Text="click for test"
+                    Command="{Binding apiTestCommand}" />
+                
+           <ListView
+            x:Name="ExerciseListView"
+            ItemsSource="{Binding ExerciseCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell
+                        x:Name="ExerciseCell">
+
+                        <ViewCell.View>
+                            <StackLayout
+                                Orientation="Horizontal">
+                                <Label
+                                    x:Name="LocationNameLabel"
+                                    Text="{Binding Name}"
+                                    VerticalOptions="Center"
+                                    Margin="10" />
+                                <Label
+                                    x:Name="MuscleLabel"
+                                    Text="{Binding Muscle.Name, StringFormat='Muscle: {0}'}"
+                                    VerticalOptions="Center"
+                                    Margin="3" />
+                                <Label
+                                    x:Name="CategoryLabel"
+                                    Text="{Binding Category.Name, StringFormat='Name %: {0}'}"
+                                    VerticalOptions="Center"
+                                    Margin="3" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>              
+                
             <Button 
                 VerticalOptions="CenterAndExpand"
                 Text="       Continue       "

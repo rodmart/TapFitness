@@ -53,10 +53,18 @@ namespace TapFitness.ViewModels
 			set { SetProperty(ref _temp, value); }
 		}
 
+		private ObservableCollection<Exercise> _exerciseCollection = new ObservableCollection<Exercise>();
+		public ObservableCollection<Exercise> ExerciseCollection
+		{
+			get { return _exerciseCollection; }
+			set { SetProperty(ref _exerciseCollection, value); }
+		}
 
         INavigationService _navigationService;
         public DelegateCommand ContinueCommand { get; set; }
-
+        //
+        public DelegateCommand apiTestCommand { get; set; }
+        //
 
         public MainPageViewModel(INavigationService navigationService)
         {
@@ -75,8 +83,10 @@ namespace TapFitness.ViewModels
                 "infomation to give you the best possible solution.";
             temp = Globals.fitnessGoals;
             ContinueCommand = new DelegateCommand(NavToDataEntryPageOne);
+            apiTestCommand = new DelegateCommand(GetUserinfo);
            
         }
+
 
         private async void NavToDataEntryPageOne()
         {
@@ -94,13 +104,23 @@ namespace TapFitness.ViewModels
             set { SetProperty(ref _exerciseItem, value); }
         }
 
+		private string _PlankTest;
+		public string PlankTest
+		{
+			get { return _PlankTest; }
+			set
+			{
+				SetProperty(ref _PlankTest, value);
+				//Globals.currentWeight = value;
+			}
+		}
 
         internal async void GetUserinfo()
         {
             HttpClient client = new HttpClient();
             var uri = new Uri(
                 string.Format(
-                    $"https://wger.de/api/v2/workout/{ExerciseItemForUser}&units=imperial&APPID=" +
+                    $"https://wger.de/api/v2/workout/{PlankTest}&units=imperial&APPID=" +
                     $"{ApiKeys.ExerciseKey}"));
             var response = await client.GetAsync(uri);
             Exercise exerciseData = null;
@@ -112,12 +132,7 @@ namespace TapFitness.ViewModels
             ExerciseCollection.Add(exerciseData);
         }
       
-        private ObservableCollection<Exercise> _exerciseCollection = new ObservableCollection<Exercise>();
-        public ObservableCollection<Exercise> ExerciseCollection
-        {
-            get { return _exerciseCollection; }
-            set { SetProperty(ref _exerciseCollection, value); }
-        }
+       
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
             

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
-//using Plugin.TextToSpeech;
+using Plugin.TextToSpeech;
 
 namespace TapFitness.ViewModels
 {
@@ -70,9 +70,8 @@ namespace TapFitness.ViewModels
 
         private void TextToSpeechFunc()
         {
-            // var SpeechText = TextToSpeechEntry.Text;
-            //CrossTextToSpeech.Current.Speak(SpeechText);
-            //CrossTextToSpeech.Current.Speak(TextToSpeech);
+           
+            CrossTextToSpeech.Current.Speak(TextToSpeech);
         }
 
 		private async void GoBackRootData()

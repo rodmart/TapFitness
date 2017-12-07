@@ -40,6 +40,8 @@
                 Placeholder="What is your goal weight? (in lbs)"
                 Text="{Binding GoalWeightEnteredByUser}"
                 WidthRequest="200" />
+
+       
                 </StackLayout>
             </Frame>
 

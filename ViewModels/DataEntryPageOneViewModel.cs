@@ -20,6 +20,9 @@ namespace TapFitness.ViewModels
 		//goback2 gages note
 
 
+		
+
+
         private string _currweightEnteredByUser;
         public string CurrWeightEnteredByUser
 		{
