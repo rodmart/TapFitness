@@ -7,7 +7,8 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
 using System.Net.Http;
-using static TapFitness.Models.ExerciseItemModels;
+using System.Net.Http.Headers;
+using static TapFitness.Models.ExerciseItemModel;
 
 namespace TapFitness.ViewModels
 {
@@ -97,12 +98,12 @@ namespace TapFitness.ViewModels
 
         public string ExerciseForUser; //needs to be implemented
 
-        private Exercise _exerciseItem;
-        public Exercise ExerciseItemForUser
-        {
-            get { return _exerciseItem; }
-            set { SetProperty(ref _exerciseItem, value); }
-        }
+       // private Exercise _exerciseItem;
+       // public Exercise ExerciseItem
+       // {
+       //    get { return _exerciseItem; }
+       //     set { SetProperty(ref _exerciseItem, value); }
+       // }
 
 		private string _PlankTest;
 		public string PlankTest
@@ -118,16 +119,22 @@ namespace TapFitness.ViewModels
         internal async void GetUserinfo()
         {
             HttpClient client = new HttpClient();
+
+            client.DefaultRequestHeaders.Authorization =
+                      new AuthenticationHeaderValue("Token", "a4d10b090f48c641a9590b6c34dcb4e87eb6e4cd");
+
             var uri = new Uri(
-                string.Format(
-                    $"https://wger.de/api/v2/workout/{PlankTest}&units=imperial&APPID=" +
-                    $"{ApiKeys.ExerciseKey}"));
-            var response = await client.GetAsync(uri);
+             string.Format(
+                    $"https://wger.de/api/v2/weightentry/"));
+            
+			var response = await client.GetAsync(uri);
             Exercise exerciseData = null;
+
            if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
                 exerciseData = Exercise.FromJson(content);
+               
             }
             ExerciseCollection.Add(exerciseData);
         }

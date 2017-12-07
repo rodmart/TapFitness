@@ -83,12 +83,12 @@
                     />
 
                       <Entry
-                Placeholder="Enter Plank Here"
+                Placeholder="Placeholder"
                 Text="{Binding PlankTest}"
                 WidthRequest="200" />
 
                 <Button x:Name="ApiTestButton"
-                    Text="click for test"
+                    Text="click me"
                     Command="{Binding apiTestCommand}" />
                 
            <ListView
@@ -103,18 +103,8 @@
                             <StackLayout
                                 Orientation="Horizontal">
                                 <Label
-                                    x:Name="LocationNameLabel"
-                                    Text="{Binding Name}"
-                                    VerticalOptions="Center"
-                                    Margin="10" />
-                                <Label
-                                    x:Name="MuscleLabel"
-                                    Text="{Binding Muscle.Name, StringFormat='Muscle: {0}'}"
-                                    VerticalOptions="Center"
-                                    Margin="3" />
-                                <Label
-                                    x:Name="CategoryLabel"
-                                    Text="{Binding Category.Name, StringFormat='Name %: {0}'}"
+                                    x:Name="Test0Label"
+                                    Text="{Binding Result.Weight, StringFormat='W: {0}'}"
                                     VerticalOptions="Center"
                                     Margin="3" />
                             </StackLayout>
