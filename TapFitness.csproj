@@ -60,6 +60,7 @@
       <DependentUpon>PlanPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\PlanPageViewModel.cs" />
+    <Compile Include="Models\ExerciseItemModelTwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">

@@ -8,8 +8,31 @@
     x:Class="TapFitness.Views.PlanPage"
     Padding="10,30,10,0">
 
-    <Label x:Name="randomLabel"
-        Text="NameofLabel" />
+
+
+
+    <StackLayout
+        HorizontalOptions="Center"
+        VerticalOptions="Fill"
+        Padding="10,0,10,0">
+
+        <Label x:Name="PlanTitleLabel"
+            HorizontalOptions="Center"
+            VerticalOptions="Fill"
+            Text="Here is your decided test plan! " />
+
+        <Button x:Name="PlanGeneratorButton"
+            Text="Are you sure you want to do this? - Click here "
+            TextColor="Red"
+            Command="{Binding PlanAPICommand}" />
+
+        
+    </StackLayout>
+
+    
+
+       
+    
 
 
     
