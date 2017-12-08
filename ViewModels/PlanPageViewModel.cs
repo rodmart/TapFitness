@@ -7,6 +7,7 @@ using Prism.Navigation;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Collections.ObjectModel;
+
 using static TapFitness.Models.ExerciseItemModelTwo;
 
 namespace TapFitness.ViewModels
@@ -20,6 +21,13 @@ namespace TapFitness.ViewModels
 		{
 			get { return _exerciseCollectionTwo; }
 			set { SetProperty(ref _exerciseCollectionTwo, value); }
+		}
+
+		private ObservableCollection<Result> _exerciseResults = new ObservableCollection<Result>();
+		public ObservableCollection<Result> ExerciseResults
+		{
+			get { return _exerciseResults; }
+            set { SetProperty(ref _exerciseResults, value); }
 		}
 
         public PlanPageViewModel()
@@ -40,18 +48,26 @@ namespace TapFitness.ViewModels
 			 string.Format(
 					$"https://wger.de/api/v2/exercise/"));
 
-			var response = await client.GetAsync(uri);
+			var responsetwo = await client.GetAsync(uri);
 			ExerciseTwo exerciseDataTwo = null;
 
-			if (response.IsSuccessStatusCode)
+			if (responsetwo.IsSuccessStatusCode)
 			{
-				var contentTwo= await response.Content.ReadAsStringAsync();
+				var contentTwo = await responsetwo.Content.ReadAsStringAsync();
 				exerciseDataTwo = ExerciseTwo.FromJson(contentTwo);
 
 			}
 			ExerciseCollectionTwo.Add(exerciseDataTwo);
-			//AddToWeightResults();
+			AddToExerciseResults();
         }
+
+		private void AddToExerciseResults()
+		{
+			foreach (var exercisetwo in ExerciseCollectionTwo)
+			{
+                ExerciseResults.Add(exercisetwo.Results[4]);
+			}
+		}
 
 		public void OnNavigatedFrom(NavigationParameters parameters)
 		{

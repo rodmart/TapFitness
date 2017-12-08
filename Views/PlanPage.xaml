@@ -26,7 +26,33 @@
             TextColor="Red"
             Command="{Binding PlanAPICommand}" />
 
-        
+         <ListView
+            x:Name="ExerciseListViewTwo"
+            ItemsSource="{Binding ExerciseResults}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell
+                        x:Name="ExerciseTwoCell">
+                        <ViewCell.ContextActions>
+                            <MenuItem
+                                x:Name="MoreInfoButton"
+                          
+                                Text="More" />
+                        </ViewCell.ContextActions>
+                        <ViewCell.View>
+                            <StackLayout
+                                Orientation="Horizontal">
+                                <Label
+                                    x:Name="Test1Label"
+                                    Text="{Binding Name, StringFormat='Exercise Name: {0}'}"
+                                    VerticalOptions="Center"
+                                    Margin="3" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>              
     </StackLayout>
 
     
