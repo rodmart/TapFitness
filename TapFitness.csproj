@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Views\ApiKeys.cs" />
     <Compile Include="Globals.cs" />
+    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -118,6 +119,12 @@
     </Reference>
     <Reference Include="Plugin.TextToSpeech">
       <HintPath>packages\Xam.Plugins.TextToSpeech.3.0.1\lib\netstandard1.0\Plugin.TextToSpeech.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
