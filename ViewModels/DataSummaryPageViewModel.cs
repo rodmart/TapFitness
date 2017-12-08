@@ -20,7 +20,7 @@ namespace TapFitness.ViewModels
         public DelegateCommand GoBackCommandTwo { get; set; }
         public DelegateCommand GoBackRootDataCommand { get; set;}
         public DelegateCommand TextToSpeechCommand { get; set; }
-
+        public DelegateCommand NavToPlanPageCommand { get; set; }
 
 
 
@@ -65,7 +65,15 @@ namespace TapFitness.ViewModels
             activityLevel = "Activity Level: " + Globals.activityLevel;
             GoBackRootDataCommand = new DelegateCommand(GoBackRootData);
             TextToSpeechCommand = new DelegateCommand(TextToSpeechFunc);
+            NavToPlanPageCommand = new DelegateCommand(PlanFunc);
 
+        }
+
+        private async void PlanFunc()
+        {
+			var navParams = new NavigationParameters();
+			navParams.Add("NavFromSummaryPage", "DataSummaryPageViewModel");
+			await _navigationService.NavigateAsync("PlanPage", navParams);
         }
 
         private void TextToSpeechFunc()

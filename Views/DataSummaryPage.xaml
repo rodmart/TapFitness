@@ -33,10 +33,19 @@
             Text="Incorrect Info? Click to go back."
             Command="{Binding GoBackRootDataCommand}" />
 
+        
 
-       <Entry x:Name="TextToSpeechEntry"
+         <Button
+            Text="CLICK FOR UR PLAN BRUH"
+            Font="20"
+            TextColor="Red"
+            Command="{Binding NavToPlanPageCommand}" />
+
+
+        <Entry x:Name="TextToSpeechEntry"
             Placeholder="Placeholder" 
             Text="{Binding TextToSpeech}" />
+        
         <Button
             Text="CLICK ME TO TALK" 
             Command="{Binding TextToSpeechCommand}" />
