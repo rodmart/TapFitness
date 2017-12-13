@@ -115,10 +115,8 @@
         </ListView>              
                 
             <Button 
-                VerticalOptions="CenterAndExpand"
                 Text="       Continue       "
-                HorizontalOptions="CenterAndExpand"
-                BackgroundColor="Silver"
+                Style="{StaticResource ButtonStyle}"
                 Command="{Binding ContinueCommand}" />
                
         </StackLayout>

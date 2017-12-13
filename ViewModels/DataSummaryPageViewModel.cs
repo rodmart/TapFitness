@@ -15,6 +15,7 @@ namespace TapFitness.ViewModels
         private string _currentWeight;
         private string _goalWeight;
         private string _activityLevel;
+        private string _timeLevel;
 
 
         public DelegateCommand GoBackCommandTwo { get; set; }
@@ -45,7 +46,11 @@ namespace TapFitness.ViewModels
 			get { return _activityLevel; }
 			set { SetProperty(ref _activityLevel, value); }
 		}
-
+        public string TimeLevel
+        {
+            get { return _timeLevel; }
+            set { SetProperty(ref _timeLevel, value); }
+        }
 		private string _TextToSpeech;
 		public string TextToSpeech
 		{
@@ -63,6 +68,7 @@ namespace TapFitness.ViewModels
             currentWeight = "Current Weight: " + Globals.currentWeight;
             goalWeight = "Goal Weight: " + Globals.goalWeight;
             activityLevel = "Activity Level: " + Globals.activityLevel;
+            TimeLevel = "Time Level: " + Globals.TimeLevel;
             GoBackRootDataCommand = new DelegateCommand(GoBackRootData);
             TextToSpeechCommand = new DelegateCommand(TextToSpeechFunc);
             NavToPlanPageCommand = new DelegateCommand(PlanFunc);

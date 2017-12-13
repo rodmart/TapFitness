@@ -4,33 +4,50 @@
     xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
-    x:Class="TapFitness.Views.DataSummaryPage">
+    x:Class="TapFitness.Views.DataSummaryPage"
+    BackgroundColor="Gray">
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="30">
 
+      <!--  <Label
+            x:Name="Title"
+            Text="Summary"
+            Style="{DynamicResource DataEntryStyleOne}"
+            Font="25"/>-->
+        <Image
+            Source="summary.jpg"/>
         <Label
          x:Name="fitnessGoal"
+            Style="{DynamicResource summarylabel}"
            Text="{Binding fitnessGoal}"
-           Font="16"
-        />
+           />
 
         <Label
          x:Name="currentWeight"
+            Style="{DynamicResource summarylabel}"
            Text="{Binding currentWeight}"
-           Font="16" />
+            />
         
         <Label
-         x:Name="coalWeight"
+         x:Name="GoalWeight"
+            Style="{DynamicResource summarylabel}"
            Text="{Binding goalWeight}"
-           Font="16" />
+           />
         
         <Label
          x:Name="activityLevel"
+            Style="{DynamicResource summarylabel}"
            Text="{Binding activityLevel}"
-           Font="16" />
+            />
+        <Label
+         x:Name="timeLevel"
+            Style="{DynamicResource summarylabel}"
+           Text="{Binding TimeLevel}"
+            />
         
         <Button
             Text="Incorrect Info? Click to go back."
+            Style="{DynamicResource ButtonStyle}"
             Command="{Binding GoBackRootDataCommand}" />
 
         
@@ -48,6 +65,7 @@
         
         <Button
             Text="CLICK ME TO TALK" 
+            Style="{DynamicResource ButtonStyle}"
             Command="{Binding TextToSpeechCommand}" />
 
     </StackLayout>

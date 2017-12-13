@@ -6,7 +6,7 @@
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.DataEntryPageOne"
     Padding="0,20,0,0"
-    BackgroundColor = "Blue">
+    BackgroundColor="Gray">
     
     <StackLayout Padding="0,30,0,0">
 
@@ -19,17 +19,22 @@
             <Picker.Items>
                 <x:String>Lose weight healthy</x:String> 
                 <x:String>Gain weight healthy</x:String>
-                <x:String>Stay the same weight healthy</x:String>
+                <x:String>Same weight but healthy</x:String>
             </Picker.Items>
         </Picker> 
 
-           
+           <Image
+                Source="Goal.jpg"
+            />
 
             <Frame
                 HasShadow="true"
-                BackgroundColor="Aqua" >
+                BackgroundColor="Black" 
+                VerticalOptions="FillAndExpand"
+            >
+                
                 <StackLayout
-                Spacing="10"
+                Spacing="20"
                 Orientation="Vertical" >
             <Entry
                 Placeholder="What is your current weight? (in lbs)"
@@ -47,9 +52,8 @@
 
         
             <Button
-            Text="Please Continue"
-            Font="20"
-            TextColor="White"
+            Text="    Please Continue   "
+            Style="{StaticResource ButtonStyle}"
             Command="{Binding CompletedQuestionOneCommand}" />
     </StackLayout>
 

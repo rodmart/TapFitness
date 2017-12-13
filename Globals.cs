@@ -7,7 +7,8 @@ namespace TapFitness
         public static string currentWeight = "";
         public static string goalWeight = "";
         public static string activityLevel = "";
-        public static string ExerciseItemData = "";
+        public static string TimeLevel = "";
+        //public static string ExerciseItemData = "";
 
 	}
 }

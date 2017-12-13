@@ -6,7 +6,8 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.PlanPage"
-    Padding="10,30,10,0">
+    Padding="10,30,10,0"
+    BackgroundColor="Gray">
 
 
 
@@ -17,8 +18,8 @@
         Padding="10,0,10,0">
 
         <Label x:Name="PlanTitleLabel"
+            Style="{DynamicResource summarylabel}"
             HorizontalOptions="Center"
-            VerticalOptions="Fill"
             Text="Here is your decided test plan! " />
 
         <Button x:Name="PlanGeneratorButton"

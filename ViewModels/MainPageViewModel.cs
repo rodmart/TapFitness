@@ -75,7 +75,7 @@ namespace TapFitness.ViewModels
             Title= "BGR.TapFitness";
             welcome="WELCOME To TapFitness";
             Intro = "Glad to have you on board." +
-                "You have taken the first step to improve" +
+                "You have taken the first step to improve " +
                 "your health.";
 
             swipe="swipe left to begin.";

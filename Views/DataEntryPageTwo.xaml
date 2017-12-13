@@ -6,14 +6,24 @@
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.DataEntryPageTwo"
     Padding="0,20,0,0"
-    BackgroundColor = "Blue">
+    BackgroundColor = "Gray">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="30">
         <Label 
         x:Name="DataLabelTwo"
         Text="How active are you?"
         Style="{StaticResource DataEntryStyleOne}"/>
+           <Frame
+                HasShadow="true"
+                BackgroundColor="Black" 
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+            >
+         <StackLayout
+                Spacing="20"
+                Orientation="Vertical" >
 
-        <Picker x:Name="ActivityPicker" SelectedIndexChanged="Handle_SelectedIndexChanged" HorizontalOptions="Center" VerticalOptions="Center" Title="How active are you?">
+        <Picker x:Name="ActivityPicker" SelectedIndexChanged="Handle_SelectedIndexChanged" HorizontalOptions="Center" VerticalOptions="Center"
+                    Title="                    How active are you?                     ">
             <Picker.Items>
                 <x:String>Not Active</x:String> 
                 <x:String>Somewhat Active</x:String>
@@ -21,16 +31,20 @@
                 <x:String>Very Active</x:String>
             </Picker.Items>
         </Picker> 
-
+                <Image
+                Source="active.png"
+                />
+              </StackLayout>
+           
+            </Frame>
         <Button
             Text="Please Continue Some More "
-            Font="20"
-            TextColor="White"
+            Style="{StaticResource ButtonStyle}"
             Command="{Binding CompletedQuestionTwoCommand}" />
         <Button
             Font="20"
-            Text="Go Back"
-            TextColor="White"
+            Text="      Go Back     "
+            Style="{StaticResource ButtonStyle}"
             Command="{Binding GoBackCommandTwo}" />
    </StackLayout> 
 </ContentPage>

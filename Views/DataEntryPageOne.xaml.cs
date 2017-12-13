@@ -21,7 +21,7 @@ namespace TapFitness.Views
 					Globals.fitnessGoals = "Gain weight healthy";
 					break;
                 case 2:
-					Globals.fitnessGoals = "Stay the same weight healthy";
+					Globals.fitnessGoals = "Same weight but healthy";
 					break;
             }
 		}

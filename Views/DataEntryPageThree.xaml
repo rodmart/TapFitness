@@ -5,26 +5,43 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="TapFitness.Views.DataEntryPageThree"
-    BackgroundColor = "Blue">
+    BackgroundColor = "Gray">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="30">
         <Label 
         x:Name="DataLabelThree"
-        Text="General Questions"
+        Text="How many minutes do you prefer to exercise?"
         Style="{StaticResource DataEntryStyleOne}"/>
-
-        <Picker 
-        x:Name="PickerThree" />
-
-    
+         <Frame
+                HasShadow="true"
+                BackgroundColor="Black" 
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+            >
+            <StackLayout
+                Spacing="20"
+                Orientation="Vertical" >
+                
+        <Picker x:Name="TimePicker" SelectedIndexChanged="Handle_SelectedIndexChanged" HorizontalOptions="Center" VerticalOptions="Center"
+                    Title="Please choose the time to workout">
+            <Picker.Items>
+                <x:String>20 Minutes</x:String> 
+                <x:String>30 Minutes</x:String>
+                <x:String>45 Minutes</x:String>
+                <x:String>1 Hour</x:String>
+            </Picker.Items>
+        </Picker> 
+                <Image
+                    Source="Exercise.jpg"
+                    />
+                </StackLayout>
+            </Frame>
         <Button
-            Text="have multiple questions here "
-            Font="20"
-            TextColor="White"
+            Text="  Please continue  "
+            Style="{DynamicResource ButtonStyle}"
             Command="{Binding CompletedQuestionThreeCommand}" />
         <Button
             Text="Go Back"
-            Font="20"
-            TextColor="White"
+            Style="{DynamicResource ButtonStyle}"
             Command="{Binding GoBackCommandThree}" />
    </StackLayout> 
 </ContentPage>

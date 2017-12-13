@@ -10,9 +10,29 @@
                 x:Key="DataEntryStyleOne"
                 TargetType="Label" >
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="25" />
-                <Setter Property="TextColor" Value="White"/>  
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="TextColor" Value="Black"/> 
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
             </Style>
+            <Style
+                x:Key="summarylabel"
+                TargetType="Label" >
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="Black"/> 
+
+            </Style>
+            <Style
+                x:Key ="ButtonStyle"
+                TargetType="Button"
+                >
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="BackgroundColor" Value="Silver"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Font" Value="20"/>
+            </Style>
+                
         </ResourceDictionary>
     </Application.Resources>
     
