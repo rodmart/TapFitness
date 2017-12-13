@@ -15,6 +15,7 @@ namespace TapFitness.ViewModels
     public class PlanPageViewModel : BindableBase, INavigationAware
     {
         public DelegateCommand PlanAPICommand { get; set; }
+        public DelegateCommand<Result> DeleteCellCommand { get; set; }
 
 		private ObservableCollection<ExerciseTwo> _exerciseCollectionTwo = new ObservableCollection<ExerciseTwo>();
 		public ObservableCollection<ExerciseTwo> ExerciseCollectionTwo
@@ -35,7 +36,17 @@ namespace TapFitness.ViewModels
             //INavigationService _navigationService;
             //goes to nothing currently
             PlanAPICommand = new DelegateCommand(SelectPlanFunc);
+            DeleteCellCommand = new DelegateCommand<Result>(DeleteCellFunc);
         }
+
+        private void DeleteCellFunc(Result exerciseTwo)
+		{
+            Result exerciseDataTwo = exerciseTwo;
+            ExerciseResults.Remove(exerciseTwo);
+            //ExerciseCollectionTwo.Remove(something);
+			//WeatherItem weatherData = weatherItem;
+			//WeatherCollection.Remove(weatherData);
+		}
 
         internal async void SelectPlanFunc()
         {
@@ -63,9 +74,22 @@ namespace TapFitness.ViewModels
 
 		private void AddToExerciseResults()
 		{
+            //logic based on data goes here (our api sucks) -gage
+            //start
+
+            //end
+
 			foreach (var exercisetwo in ExerciseCollectionTwo)
 			{
                 ExerciseResults.Add(exercisetwo.Results[4]);
+                //
+                ExerciseResults.Add(exercisetwo.Results[2]);
+                ExerciseResults.Add(exercisetwo.Results[3]);
+				ExerciseResults.Add(exercisetwo.Results[11]);
+				ExerciseResults.Add(exercisetwo.Results[8]);
+				ExerciseResults.Add(exercisetwo.Results[12]);
+				ExerciseResults.Add(exercisetwo.Results[13]);
+				ExerciseResults.Add(exercisetwo.Results[19]);
 			}
 		}
 

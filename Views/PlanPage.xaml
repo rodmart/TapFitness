@@ -33,12 +33,20 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell
-                        x:Name="ExerciseTwoCell">
+                        x:Name="ExerciseTwoItemCell">
                         <ViewCell.ContextActions>
                             <MenuItem
                                 x:Name="MoreInfoButton"
                           
                                 Text="More" />
+                            <MenuItem 
+                            x:Name="DeletButton"
+                            AutomationId="DeleteButton"
+
+                            Command="{Binding DeleteCellCommand}"
+                           
+                            IsDestructive="true"
+                            Text="Delete"/>
                         </ViewCell.ContextActions>
                         <ViewCell.View>
                             <StackLayout
