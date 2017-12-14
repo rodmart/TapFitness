@@ -37,14 +37,14 @@
                         <ViewCell.ContextActions>
                             <MenuItem
                                 x:Name="MoreInfoButton"
-                          
+
                                 Text="More" />
                             <MenuItem 
                             x:Name="DeletButton"
                             AutomationId="DeleteButton"
-
+                            BindingContext="{Binding Source={x:Reference ExerciseListViewTwo}, Path=BindingContext}"
                             Command="{Binding DeleteCellCommand}"
-                           
+                            CommandParameter="{Binding Source={x:Reference ExerciseTwoItemCell}, Path=BindingContext}"
                             IsDestructive="true"
                             Text="Delete"/>
                         </ViewCell.ContextActions>

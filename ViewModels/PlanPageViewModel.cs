@@ -14,8 +14,13 @@ namespace TapFitness.ViewModels
 {
     public class PlanPageViewModel : BindableBase, INavigationAware
     {
+        INavigationService _navigationService;
         public DelegateCommand PlanAPICommand { get; set; }
         public DelegateCommand<Result> DeleteCellCommand { get; set; }
+        //public DelegateCommand <Result>NavToMoreInfoCommand { get; set; }
+        public DelegateCommand GoBackToPlanCommand { get; set; }
+
+        public DelegateCommand TestNavCommand { get; set; }
 
 		private ObservableCollection<ExerciseTwo> _exerciseCollectionTwo = new ObservableCollection<ExerciseTwo>();
 		public ObservableCollection<ExerciseTwo> ExerciseCollectionTwo
@@ -31,18 +36,32 @@ namespace TapFitness.ViewModels
             set { SetProperty(ref _exerciseResults, value); }
 		}
 
-        public PlanPageViewModel()
+        public PlanPageViewModel(INavigationService navigationService)
         {
-            //INavigationService _navigationService;
+			_navigationService = navigationService;
             //goes to nothing currently
             PlanAPICommand = new DelegateCommand(SelectPlanFunc);
             DeleteCellCommand = new DelegateCommand<Result>(DeleteCellFunc);
+           
+           // NavToMoreInfoCommand = new DelegateCommand<Result>(NavToMoreInfoFunc);
+           // GoBackToPlanCommand = new DelegateCommand(GoBackNav);
         }
 
-        private void DeleteCellFunc(Result exerciseTwo)
+
+
+
+		//private async void NavToMoreInfoFunc(Result result)
+		//{
+		//	var navParams = new NavigationParameters();
+		//	 navParams.Add("ExerciseItemInfo", result);
+		//	await _navigationService.NavigateAsync("MoreInfoPage", navParams);
+	//	}
+
+
+        private void DeleteCellFunc(Result result)
 		{
-            Result exerciseDataTwo = exerciseTwo;
-            ExerciseResults.Remove(exerciseTwo);
+            Result exerciseDataTwo = result;
+            ExerciseResults.Remove(exerciseDataTwo);
             //ExerciseCollectionTwo.Remove(something);
 			//WeatherItem weatherData = weatherItem;
 			//WeatherCollection.Remove(weatherData);
@@ -72,26 +91,26 @@ namespace TapFitness.ViewModels
 			AddToExerciseResults();
         }
 
-		private void AddToExerciseResults()
-		{
+        private void AddToExerciseResults()
+        {
             //logic based on data goes here (our api sucks) -gage
             //start
 
             //end
 
-			foreach (var exercisetwo in ExerciseCollectionTwo)
-			{
+            foreach (var exercisetwo in ExerciseCollectionTwo)
+            {
                 ExerciseResults.Add(exercisetwo.Results[4]);
                 //
                 ExerciseResults.Add(exercisetwo.Results[2]);
                 ExerciseResults.Add(exercisetwo.Results[3]);
-				ExerciseResults.Add(exercisetwo.Results[11]);
-				ExerciseResults.Add(exercisetwo.Results[8]);
-				ExerciseResults.Add(exercisetwo.Results[12]);
-				ExerciseResults.Add(exercisetwo.Results[13]);
-				ExerciseResults.Add(exercisetwo.Results[19]);
-			}
-		}
+                ExerciseResults.Add(exercisetwo.Results[11]);
+                ExerciseResults.Add(exercisetwo.Results[8]);
+                ExerciseResults.Add(exercisetwo.Results[12]);
+                ExerciseResults.Add(exercisetwo.Results[13]);
+                ExerciseResults.Add(exercisetwo.Results[19]);
+            }
+        }
 
 		public void OnNavigatedFrom(NavigationParameters parameters)
 		{

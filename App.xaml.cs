@@ -27,6 +27,7 @@ namespace TapFitness
             Container.RegisterTypeForNavigation<DataEntryPageThree>();
             Container.RegisterTypeForNavigation<DataSummaryPage>();
             Container.RegisterTypeForNavigation<PlanPage>();
+           // Container.RegisterTypeForNavigation<MoreInfoPage>();
         }
     }
 }
