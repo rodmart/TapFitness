@@ -1,27 +1,21 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
+//using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Prism.Navigation;
 
 namespace TapFitness.ViewModels
 {
-    public class MoreInfoPageViewModel : BindableBase, INavigationAware   
+    public class MoreInfoPageViewModel : BindableBase
     {
-		INavigationService _navigationService;
-        //public DelegateCommand GoBackToPlanCommand { get; set; }
+       /* //INavigationService _navigationService;
 
-        public MoreInfoPageViewModel(INavigationService _navigationService)
+
+        public MoreInfoPageViewModel(INavigationService navigationService)
         {
-            //_navigationService = navigationService;
-			//GoBackToPlanCommand = new DelegateCommand(GoBackNav);
-		}
-
-		private void GoBackNav()
-		{
-			//_navigationService.GoBackAsync();
-		}
+           // _navigationService = navigationService;
+        }
 
 		public void OnNavigatedFrom(NavigationParameters parameters)
 		{
@@ -34,5 +28,6 @@ namespace TapFitness.ViewModels
 		public void OnNavigatingTo(NavigationParameters parameters)
 		{
 		}
-    }
+        */
+	}
 }

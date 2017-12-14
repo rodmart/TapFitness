@@ -67,6 +67,7 @@ namespace TapFitness.ViewModels
         public DelegateCommand apiTestCommand { get; set; }
         //
 
+
         public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;

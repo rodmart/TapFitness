@@ -17,10 +17,13 @@ namespace TapFitness.ViewModels
         INavigationService _navigationService;
         public DelegateCommand PlanAPICommand { get; set; }
         public DelegateCommand<Result> DeleteCellCommand { get; set; }
-        //public DelegateCommand <Result>NavToMoreInfoCommand { get; set; }
-        public DelegateCommand GoBackToPlanCommand { get; set; }
+        public DelegateCommand ClickThisCommand { get; set; }
+        public DelegateCommand<Result> MoreCellCommand { get; set; }
 
-        public DelegateCommand TestNavCommand { get; set; }
+        //public DelegateCommand <Result>NavToMoreInfoCommand { get; set; }
+       // public DelegateCommand GoBackToPlanCommand { get; set; }
+
+        //public DelegateCommand TestNavCommand { get; set; }
 
 		private ObservableCollection<ExerciseTwo> _exerciseCollectionTwo = new ObservableCollection<ExerciseTwo>();
 		public ObservableCollection<ExerciseTwo> ExerciseCollectionTwo
@@ -40,8 +43,12 @@ namespace TapFitness.ViewModels
         {
 			_navigationService = navigationService;
             //goes to nothing currently
+            ClickThisCommand = new DelegateCommand(trythis);
             PlanAPICommand = new DelegateCommand(SelectPlanFunc);
             DeleteCellCommand = new DelegateCommand<Result>(DeleteCellFunc);
+            MoreCellCommand = new DelegateCommand<Result>(MoreCellFunc);
+
+           
            
            // NavToMoreInfoCommand = new DelegateCommand<Result>(NavToMoreInfoFunc);
            // GoBackToPlanCommand = new DelegateCommand(GoBackNav);
@@ -49,6 +56,12 @@ namespace TapFitness.ViewModels
 
 
 
+		private async void trythis()
+		{
+			var navParams = new NavigationParameters();
+			navParams.Add("NavFromPage", "PlanPageViewModel");
+			await _navigationService.NavigateAsync("TestPage", navParams);
+		}
 
 		//private async void NavToMoreInfoFunc(Result result)
 		//{
@@ -56,7 +69,12 @@ namespace TapFitness.ViewModels
 		//	 navParams.Add("ExerciseItemInfo", result);
 		//	await _navigationService.NavigateAsync("MoreInfoPage", navParams);
 	//	}
-
+        private async void MoreCellFunc(Result result)
+        {
+			var navParams = new NavigationParameters();
+			navParams.Add("ExerciseItemInfo", result);
+			await _navigationService.NavigateAsync("TestPage", navParams);
+        }
 
         private void DeleteCellFunc(Result result)
 		{

@@ -16,7 +16,9 @@
         HorizontalOptions="Center"
         VerticalOptions="Fill"
         Padding="10,0,10,0">
-
+        <Button Text="clickfornav"
+            Command="{Binding ClickThisCommand}" />
+        
         <Label x:Name="PlanTitleLabel"
             Style="{DynamicResource summarylabel}"
             HorizontalOptions="Center"
@@ -37,7 +39,10 @@
                         <ViewCell.ContextActions>
                             <MenuItem
                                 x:Name="MoreInfoButton"
-
+                                AutomationId="MoreInfoButton"
+                                Command="{Binding MoreCellCommand}"
+                                BindingContext="{Binding Source={x:Reference ExerciseListViewTwo}, Path=BindingContext}"
+                                CommandParameter="{Binding Source={x:Reference ExerciseTwoItemCell}, Path=BindingContext}"
                                 Text="More" />
                             <MenuItem 
                             x:Name="DeletButton"
