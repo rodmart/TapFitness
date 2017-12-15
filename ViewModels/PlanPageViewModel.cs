@@ -20,11 +20,6 @@ namespace TapFitness.ViewModels
         public DelegateCommand ClickThisCommand { get; set; }
         public DelegateCommand<Result> MoreCellCommand { get; set; }
 
-        //public DelegateCommand <Result>NavToMoreInfoCommand { get; set; }
-       // public DelegateCommand GoBackToPlanCommand { get; set; }
-
-        //public DelegateCommand TestNavCommand { get; set; }
-
 		private ObservableCollection<ExerciseTwo> _exerciseCollectionTwo = new ObservableCollection<ExerciseTwo>();
 		public ObservableCollection<ExerciseTwo> ExerciseCollectionTwo
 		{
@@ -42,16 +37,10 @@ namespace TapFitness.ViewModels
         public PlanPageViewModel(INavigationService navigationService)
         {
 			_navigationService = navigationService;
-            //goes to nothing currently
             ClickThisCommand = new DelegateCommand(trythis);
             PlanAPICommand = new DelegateCommand(SelectPlanFunc);
             DeleteCellCommand = new DelegateCommand<Result>(DeleteCellFunc);
             MoreCellCommand = new DelegateCommand<Result>(MoreCellFunc);
-
-           
-           
-           // NavToMoreInfoCommand = new DelegateCommand<Result>(NavToMoreInfoFunc);
-           // GoBackToPlanCommand = new DelegateCommand(GoBackNav);
         }
 
 
@@ -63,12 +52,6 @@ namespace TapFitness.ViewModels
 			await _navigationService.NavigateAsync("TestPage", navParams);
 		}
 
-		//private async void NavToMoreInfoFunc(Result result)
-		//{
-		//	var navParams = new NavigationParameters();
-		//	 navParams.Add("ExerciseItemInfo", result);
-		//	await _navigationService.NavigateAsync("MoreInfoPage", navParams);
-	//	}
         private async void MoreCellFunc(Result result)
         {
 			var navParams = new NavigationParameters();
@@ -80,9 +63,6 @@ namespace TapFitness.ViewModels
 		{
             Result exerciseDataTwo = result;
             ExerciseResults.Remove(exerciseDataTwo);
-            //ExerciseCollectionTwo.Remove(something);
-			//WeatherItem weatherData = weatherItem;
-			//WeatherCollection.Remove(weatherData);
 		}
 
         internal async void SelectPlanFunc()

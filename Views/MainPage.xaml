@@ -74,45 +74,9 @@
                 Text="{Binding paragraph1}"
                 />
 
-                <Label
-            Text="{Binding ExerciseItemForUser.Run, StringFormat='Exercise: {0}'}" 
-            TextColor="Black"
-        />
-                <Label
-                    Text="{Binding ExerciseItemForUser}"
+               <Image
+                    Source="letsdoit.jpg"
                     />
-
-                      <Entry
-                Placeholder=""
-                Text="{Binding PlankTest}"
-                WidthRequest="200" />
-
-                <Button x:Name="ApiTestButton"
-                    Text="click me"
-                    Command="{Binding apiTestCommand}" />
-                
-           <ListView
-            x:Name="ExerciseListView"
-            ItemsSource="{Binding WeightResults}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell
-                        x:Name="ExerciseCell">
-
-                        <ViewCell.View>
-                            <StackLayout
-                                Orientation="Horizontal">
-                                <Label
-                                    x:Name="Test0Label"
-                                    Text="{Binding Weight, StringFormat='W: {0}'}"
-                                    VerticalOptions="Center"
-                                    Margin="3" />
-                            </StackLayout>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>              
                 
             <Button 
                 Text="       Continue       "

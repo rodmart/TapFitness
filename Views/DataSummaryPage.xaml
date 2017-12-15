@@ -53,18 +53,19 @@
         
 
          <Button
-            Text="CLICK FOR UR PLAN BRUH"
+            Text="  CLICK FOR UR PLAN BRUH  "
             Font="20"
+            Style="{DynamicResource ButtonStyle}"
             TextColor="Red"
             Command="{Binding NavToPlanPageCommand}" />
 
 
         <Entry x:Name="TextToSpeechEntry"
-            Placeholder="Placeholder" 
+            Placeholder="Enter some words" 
             Text="{Binding TextToSpeech}" />
         
         <Button
-            Text="CLICK ME TO TALK" 
+            Text="  CLICK ME TO TALK  " 
             Style="{DynamicResource ButtonStyle}"
             Command="{Binding TextToSpeechCommand}" />
 

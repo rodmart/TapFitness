@@ -13,7 +13,8 @@
         VerticalOptions="FillAndExpand"
         Padding="10,0,10,0" >
 
-        <Button Text="go back" 
+        <Button Text="   go back   " 
+            Style="{DynamicResource ButtonStyle}"
         Command="{Binding LastGoBackCommand}"/>
 
 
@@ -25,9 +26,20 @@
             TextColor="White"/>
                 
          </Frame>
-        
-
-
+        <Label
+            Text="Click the button!"
+            />
+        <Button 
+            x:Name="MainGrid"
+            Text="    Magic!    "
+            Style="{DynamicResource ButtonStyle}"
+            Clicked="Button_OnClicked"
+            />
+         <!--<Grid x:Name="MainGrid"
+            BackgroundColor="Purple"
+            WidthRequest="150"
+            HeightRequest="150"
+            HorizontalOptions="Start"/>-->
 
 
         
