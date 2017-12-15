@@ -143,7 +143,7 @@ namespace TapFitness.ViewModels
                     ExerciseResults.Add(exercisetwo.Results[13]);
                     ExerciseResults.Add(exercisetwo.Results[19]);
                 }
-                else
+                else if (Globals.fitnessGoals == "")
                 {
                     ExerciseResults.Add(exercisetwo.Results[4]);
                     ExerciseResults.Add(exercisetwo.Results[2]);
