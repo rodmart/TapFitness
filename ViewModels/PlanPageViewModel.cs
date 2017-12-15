@@ -118,15 +118,42 @@ namespace TapFitness.ViewModels
 
             foreach (var exercisetwo in ExerciseCollectionTwo)
             {
-                ExerciseResults.Add(exercisetwo.Results[4]);
-                //
-                ExerciseResults.Add(exercisetwo.Results[2]);
-                ExerciseResults.Add(exercisetwo.Results[3]);
-                ExerciseResults.Add(exercisetwo.Results[11]);
-                ExerciseResults.Add(exercisetwo.Results[8]);
-                ExerciseResults.Add(exercisetwo.Results[12]);
-                ExerciseResults.Add(exercisetwo.Results[13]);
-                ExerciseResults.Add(exercisetwo.Results[19]);
+                
+                if (Globals.fitnessGoals == "Lose weight healthy")
+                {
+                    ExerciseResults.Add(exercisetwo.Results[4]);
+                    ExerciseResults.Add(exercisetwo.Results[2]);
+                    ExerciseResults.Add(exercisetwo.Results[3]);
+                    ExerciseResults.Add(exercisetwo.Results[19]);
+                }
+
+                if (Globals.fitnessGoals == "Gain weight healthy")
+                {
+                    ExerciseResults.Add(exercisetwo.Results[4]);
+                    ExerciseResults.Add(exercisetwo.Results[2]);
+                    ExerciseResults.Add(exercisetwo.Results[11]);
+					ExerciseResults.Add(exercisetwo.Results[12]);
+                }
+                if (Globals.fitnessGoals == "Same weight but healthy")
+                {
+                    ExerciseResults.Add(exercisetwo.Results[4]);
+                    ExerciseResults.Add(exercisetwo.Results[2]);
+                    ExerciseResults.Add(exercisetwo.Results[8]);
+                    ExerciseResults.Add(exercisetwo.Results[12]);
+                    ExerciseResults.Add(exercisetwo.Results[13]);
+                    ExerciseResults.Add(exercisetwo.Results[19]);
+                }
+                else
+                {
+                    ExerciseResults.Add(exercisetwo.Results[4]);
+                    ExerciseResults.Add(exercisetwo.Results[2]);
+                    ExerciseResults.Add(exercisetwo.Results[3]);
+                    ExerciseResults.Add(exercisetwo.Results[11]);
+                    ExerciseResults.Add(exercisetwo.Results[8]);
+                    ExerciseResults.Add(exercisetwo.Results[12]);
+                    ExerciseResults.Add(exercisetwo.Results[13]);
+                    ExerciseResults.Add(exercisetwo.Results[19]);
+                }
             }
         }
 
