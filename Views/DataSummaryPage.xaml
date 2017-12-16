@@ -61,7 +61,7 @@
 
 
         <Entry x:Name="TextToSpeechEntry"
-            Placeholder="Enter some words" 
+            Placeholder="Give us an A" 
             Text="{Binding TextToSpeech}" />
         
         <Button
